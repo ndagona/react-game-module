@@ -1,0 +1,16 @@
+.game_section {
+    width: 1450px;
+    height: 850px;
+    z-index: 0;
+    margin-top: 10px;
+    padding-top: 40px;
+    margin-left: 400px;
+    border-radius: 40px 40px 80px 80px;
+    box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tit {
+    font-size: 22px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}

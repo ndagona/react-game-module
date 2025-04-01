@@ -34,19 +34,19 @@ function Topnav() {
 
     return (
         <nav className="top_nav">
-            <p className="date">
+            <div className="date">
                 {Object.keys(currentDate).map((val, ind) => (
                     <p className="calendar" key={`calendar-${ind}`} id={`calendar-${ind}`}>{currentDate[val]}</p>
                 ))
                 }
-            </p>
+            </div>
             <p className="title"> Simplicity At Its Best</p>
-            <p className="time">
+            <div className="time">
                 {currentTime && Object.keys(currentTime).map((vall, indie) => (
                     <p className="timer" key={`time-${indie}`} id={`time-${indie}`}>{currentTime[vall]}</p>
                 ))
                 }
-            </p>
+            </div>
         </nav>
     )
 }
