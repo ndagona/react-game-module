@@ -53,36 +53,43 @@ function Word() {
     }
 
     const handleSubmit = () => {
+        const checkComp = (e) => {
+            const him = checkTrue(e).join("")
+            if (him.includes("❌")) return
+            else if (him.includes("⚠️")) return
+            setOver(true)
+        }
         if (user_input.length === 5) {
             if (level === 1) {
                 setAns1(checkTrue(user_input.split("")))
                 setlevel(level + 1)
                 setUserIput("")
+                checkComp(user_input.split(""))
                 return
             }
             else if (level === 2) {
                 setAns2(checkTrue(user_input.split("")))
                 setUserIput("")
                 setlevel(level + 1)
-                return
+                return checkComp(user_input.split(""))
             }
             else if (level === 3) {
                 setAns3(checkTrue(user_input.split("")))
                 setUserIput("")
                 setlevel(level + 1)
-                return
+                return checkComp(user_input.split(""))
             }
             else if (level === 4) {
                 setAns4(checkTrue(user_input.split("")))
                 setUserIput("")
                 setlevel(level + 1)
-                return
+                return checkComp(user_input.split(""))
             }
             else if (level === 5) {
                 setAns5(checkTrue(user_input.split("")))
                 setUserIput("")
                 setlevel(level + 1)
-                return
+                return checkComp(user_input.split(""))
             }
             else if (level === 6) {
                 setAns6(checkTrue(user_input.split("")))
@@ -90,12 +97,12 @@ function Word() {
                 setlevel(level + 1)
                 setOver(true)
                 setAdis(true)
-                return
+                return checkComp(user_input.split(""))
             }
             else if (level > 6) {
                 setAdis(true)
                 setOver(true)
-                return
+                return checkComp(user_input.split(""))
             }
         }
         else if (user_input.length < 5) {
@@ -146,7 +153,7 @@ function Word() {
                         <p className="prov_t">Your Answers...</p>
                         <section className="prov">
                             {db.map((row) => (
-                                <p className="ans">{row.map(el => el.replace("❌", "").replace("✅", "").replace("⚠️", "")).join("")}</p>
+                                <p className="ans">{row.map(el => el.replace("❌", "").replace("✅", "").replace("⚠️", "")).join("") || ""}</p>
                             ))
                             }
                         </section>
