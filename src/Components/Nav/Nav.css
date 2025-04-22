@@ -10,4 +10,7 @@
     padding-bottom: 50px;
     z-index: 0;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

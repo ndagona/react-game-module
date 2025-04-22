@@ -52,6 +52,13 @@ function Word() {
         }
     }
 
+    const handleRandomInput = (e) => {
+        console.log(e)
+        if (user_input.length < 6) {
+            setUserIput([...user_input, e].join(""))
+        }
+    }
+
     const handleSubmit = () => {
         const checkComp = (e) => {
             const him = checkTrue(e).join("")
@@ -137,7 +144,7 @@ function Word() {
                 </section>
                 {!over ?
                     db.map((row, val) => (
-                        <section className="one" key={`section-key-${val}`}>
+                        <section className="one" key={`section-key-${val}`} onKeyDown={handleRandomInput}>
                             {Array.isArray(row) && row.map((sec, ind) => (
                                 <p key={`para-key-${ind}`}>{sec}</p>
                             ))}
@@ -154,8 +161,11 @@ function Word() {
                         <section className="prov">
                             {db.map((row) => (
                                 <p className="ans">{row.map(el => el.replace("❌", "").replace("✅", "").replace("⚠️", "")).join("") || ""}</p>
+                                
                             ))
+                            
                             }
+                            <button className='reset_wordle'>Reset</button>
                         </section>
                     </section>
 
