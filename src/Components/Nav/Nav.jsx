@@ -7,6 +7,7 @@ function Nav({setter}) {
         <nav className="left_nav">
             <NavElement name="Wordle" setter={setter}/>
             <NavElement name="RPS" setter={setter} />
+            <NavElement name="Tik Tak Toe" setter={setter} />
         </nav>
     )
 }
